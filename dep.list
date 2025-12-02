@@ -1,2 +1,0 @@
-.cache/csv.o: src/csv/csv.c src/csv/csv.h
-.cache/test.o: test/test.c src/csv/csv.h
