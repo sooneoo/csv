@@ -30,9 +30,11 @@ int main(void) {
 
     char * csv_text = new(ALLOC(&arena), sizeof(char) * (size + 1));
     fread(csv_text, sizeof(char), size, f);
+    
+    fclose(f);
 
     Csv doc = csv(ALLOC(&arena), ',', csv_text);
-    Csv data = csv_slice(&doc, (size_t[]) {1, 0, doc.row-1, doc.column});
+    Csv data = doc;//csv_slice(&doc, (size_t[]) {1, 0, 4, 2});
     //Csv data = csv_transpose(&doc);
     printf("%ldx%ld %ld | %ld\n", data.row, data.column, data.size, doc.size);  
 

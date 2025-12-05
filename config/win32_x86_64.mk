@@ -15,7 +15,7 @@ LIBS += -lalloc
 OBJS += $(CACHE)/csv.o
 
 
-INDIR = /usr/include/csv
+INDIR = /usr/include/
 LIBDIR = /usr/lib
 
 
