@@ -6,7 +6,7 @@
 
 void csv_push_back(Csv * self, size_t length, char * c_str_ref) {
     if(self->size >= self->capacity) {
-        self->capacity = (self->capacity + 1) * 2;
+        self->capacity = (self->capacity + 10);
         self->arr = resize(self->alloc, self->arr, sizeof(Csv_Cell) * self->capacity);
     }
 
@@ -156,7 +156,7 @@ void csv_show(Csv * self, FILE * stream) {
     for(size_t row = 0; row < self->row; row++) {
         for(size_t column = 0; column < self->column; column++) {
             Csv_Cell *cell = csv_at(self, row, column);
-            fprintf(stream, column == 0 ? "%.*s" : ", %.*s", (int) cell->length, cell->c_str);
+            fprintf(stream, column == 0 ? "%.*s" : ",%.*s", (int) cell->length, cell->c_str);
         }
 
         fprintf(stream, "\n");

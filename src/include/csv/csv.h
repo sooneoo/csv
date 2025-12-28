@@ -2,6 +2,7 @@
 #define _CSV_H_
 
 
+#include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <alloc/alloc.h>
@@ -9,7 +10,7 @@
 
 
 typedef struct {
-    size_t length;
+    uint16_t length;
     char * c_str;
 } Csv_Cell;
 
